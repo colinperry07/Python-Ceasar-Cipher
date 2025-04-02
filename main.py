@@ -44,9 +44,9 @@ if __name__ == "__main__":
                 break
         crypt_choice = str(input("Would you like to encrypt or decrypt the message: "))
         
-        if crypt_choice.lower() == "encrypt":
+        if crypt_choice.lower() == "encrypt" or "e":
             crypt_choice = True
-        if crypt_choice.lower() == "decrypt":
+        if crypt_choice.lower() == "decrypt" or "d":
             crypt_choice = False
 
     except:
