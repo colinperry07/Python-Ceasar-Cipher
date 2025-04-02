@@ -22,7 +22,7 @@ class Caesar():
         for character in message:
             if character in self.LETTERS:
                 character_pos = self.LETTERS.find(character)
-                new_pos = (character_pos + key) % len(self.LETTERS)
+                new_pos = (character_pos - key) % len(self.LETTERS)
                 decrypted_message.append(self.LETTERS[new_pos])
             else:
                 decrypted_message.append(character)
