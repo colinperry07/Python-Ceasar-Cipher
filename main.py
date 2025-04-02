@@ -33,7 +33,13 @@ if __name__ == "__main__":
     try:
         
         init_message = str(input("Input the message you'd like to encrypt/decrypt: "))
-        key_choice = int(input("Enter the key number you would like to encrpyt/decrypt with (1-25): "))
+        while True:
+            key_choice = int(input("Enter the key number you would like to encrpyt/decrypt with (1-25): "))
+            if 0 > key_choice > 25:
+                key_choice = None
+                print("invalid key number")
+            else:
+                break
         crypt_choice = str(input("Would you like to encrypt or decrypt the message: "))
         
         if crypt_choice.lower() == "encrypt":
