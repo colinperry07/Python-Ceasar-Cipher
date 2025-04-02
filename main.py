@@ -42,12 +42,17 @@ if __name__ == "__main__":
                 print("invalid offset number")
             else:
                 break
-        crypt_choice = str(input("Would you like to encrypt or decrypt the message: "))
-        
-        if crypt_choice.lower() == "encrypt" or "e":
-            crypt_choice = True
-        if crypt_choice.lower() == "decrypt" or "d":
-            crypt_choice = False
+        while True:
+            crypt_choice = str(input("Would you like to encrypt or decrypt the message: "))
+            
+            if crypt_choice.lower() == "encrypt":
+                crypt_choice = True
+                break
+            elif crypt_choice.lower() == "decrypt":
+                crypt_choice = False
+                break
+            else:
+                print("invalid response...")
 
     except:
         pass
