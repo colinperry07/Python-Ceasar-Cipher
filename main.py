@@ -7,9 +7,6 @@ class Caesar():
     
     def encrypt(self, message, key):
         encrypted_message = ''
-        self.message = message
-        self.key = key
-        
         try:
             for character in self.message:
                 character_pos = self.LETTERS.find(character)
@@ -20,8 +17,6 @@ class Caesar():
 
 
     def decrypt(self, message, key):
-        self.message = message
-        self.key = key
         decrypted_message = ''
         try:
             for character in self.message:
