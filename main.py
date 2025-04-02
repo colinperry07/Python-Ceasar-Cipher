@@ -1,4 +1,4 @@
-class Ceasar():
+class Caesar():
     
     
     def __init__(self):
