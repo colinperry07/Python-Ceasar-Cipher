@@ -37,7 +37,7 @@ if __name__ == "__main__":
         init_message = str(input("Input the message you'd like to encrypt/decrypt: "))
         while True:
             offset_choice = int(input("Enter the offset number you would like to encrpyt/decrypt with (1-25): "))
-            if 0 > offset_choice > 25:
+            if offset_choice < 0 or offset_choice > 25:
                 offset_choice = None
                 print("invalid offset number")
             else:
