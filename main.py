@@ -6,25 +6,27 @@ class Caesar():
     
     
     def encrypt(self, message, key):
-        encrypted_message = ''
-        try:
-            for character in self.message:
+        encrypted_message = []=
+        for character in message:
+            if character in self.LETTERS:
                 character_pos = self.LETTERS.find(character)
-                encrypted_message += self.LETTERS[character_pos + self.key]
-        except:
-            pass
-        return encrypted_message
+                new_pos = (character_pos + key) % len(self.LETTERS)
+                encrypted_message.append(self.LETTERS[new_pos])
+            else:
+                encrypted_message.append(character)
+        return ''.join(encrypted_message)
 
 
     def decrypt(self, message, key):
-        decrypted_message = ''
-        try:
-            for character in self.message:
+        decrypted_message = []=
+        for character in message:
+            if character in self.LETTERS:
                 character_pos = self.LETTERS.find(character)
-                decrypted_message += self.LETTERS[character_pos - self.key]
-        except:
-            pass
-        return decrypted_message
+                new_pos = (character_pos + key) % len(self.LETTERS)
+                decrypted_message.append(self.LETTERS[new_pos])
+            else:
+                decrypted_message.append(character)
+        return ''.join(decrypted_message)
 
 if __name__ == "__main__":
     cipher = Ceasar()
